@@ -4,7 +4,7 @@ int main()
 {
 	int num=0,alpha=0,Alpha=0,state=0;
 	float nar=0,Aar=0;
-	int let=0,maxlet=0;
+	int len=0,maxlen=0;
 	int c,i=0,k=0,j;
 	char letter[1000],word[1001],longest[1001];
 	for(j=0;j<1001;j++)
@@ -25,23 +25,23 @@ int main()
 			num++;
 		if(c==' '||c=='\t'||c=='\n')
 		{
-			word[let]=c;
+			word[len]=c;
 			state=0;
-			word[let]='\0';
-			if(let>maxlet)
+			word[len]='\0';
+			if(len>maxlen)
 			{
-				maxlet=let;
-				for(j=0;j<maxlet+1;j++)
+				maxlen=len;
+				for(j=0;j<maxlen+1;j++)
 					longest[j]=word[j];
 			}
-			let=0;
+			len=0;
 		}
 		else if(state==0)
 		{
 			if(c>='A'&&c<='Z'||c>='a'&&c<='z')
 			{
-				word[let]=c;
-				let++;
+				word[len]=c;
+				len++;
 				state=1;
 			}
 			else
@@ -49,17 +49,17 @@ int main()
 		}
 		else if(state==1)
 		{
-			word[let]=c;
+			word[len]=c;
 			let++;
 		}
 	}
-	if(let>maxlet)
+	if(let>maxlen)
 	{
-		maxlet=let;
-		for(j=0;j<maxlet+1;j++)
+		maxlen=len;
+		for(j=0;j<maxlen+1;j++)
 			longest[j]=word[j];
 	}
-	if(maxlet>0)
+	if(maxlen>0)
 	{
 		if(alpha==0)
 			printf("Upper/Lower:There is no lower.\n");
@@ -76,7 +76,7 @@ int main()
 			printf("Digit/Alphabet:%.3f\n",nar);
 		}
 		printf("Longest word:%s\n",longest);
-		printf("The length:%d\n",maxlet);
+		printf("The length:%d\n",maxlen);
 	}
 	else
 		printf("There is no word.\n");
