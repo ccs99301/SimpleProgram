@@ -2,18 +2,18 @@
 
 float grade(float x)
 {
-		float y=0,z=0;
-		x*=x;
-		while(1)
-		{
-			y=y+0.001;
-			z=y*y*y*y*y;
-			if(z>=x)
-				break;
-		}
-		y*=12;
-		y+=25;
-		return y;
+	float y=0,z=0;
+	x*=x;
+	while(1)
+	{
+		y=y+0.001;
+		z=y*y*y*y*y;
+		if(z>=x)
+			break;
+	}
+	y*=12;
+	y+=25;
+	return y;
 }
 
 int main()
