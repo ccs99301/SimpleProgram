@@ -19,12 +19,12 @@ int isPrime(int x)
 	}
 	return state;
 }
-void sort(int data[],int let)
+void sort(int data[],int len)
 {
 	int i,th=0,tmp;
-	for(i=0;i<let;i++)
+	for(i=0;i<len;i++)
 	{
-		while(i+th<let)
+		while(i+th<len)
 		{
 			th++;
 			if(data[i]>data[i+th])
